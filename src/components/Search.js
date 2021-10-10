@@ -8,7 +8,10 @@ function Search() {
   return (
     <Form>
       <InputGroup className="mb-3 mt-4">
-        <FormControl aria-label="Text input with dropdown button" />
+        <FormControl
+          aria-label="Text input with dropdown button"
+          placeholder="Search"
+        />
 
         <DropdownButton
           variant="outline-secondary"
