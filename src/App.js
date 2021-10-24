@@ -2,9 +2,7 @@ import { BiArchive } from "react-icons/bi";
 import Search from "./components/Search";
 import AddAppointment from "./components/AddAppointment";
 import ListGroup from "react-bootstrap/ListGroup";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-
+import AppointmentInfo from "./components/AppointmentInfo";
 import appointmentList from "./data.json";
 
 function App() {
@@ -16,21 +14,8 @@ function App() {
       <AddAppointment />
       <Search />
       <ListGroup>
-        {appointmentList.map((appoinment) => (
-          <ListGroup.Item>
-            <Card>
-              <Card.Header>{appoinment.petName}</Card.Header>
-              <Card.Body>
-                <Card.Title>Owner: </Card.Title>
-                <Card.Text>{appoinment.ownerName}</Card.Text>
-                <Card.Title>Appointment Date: </Card.Title>
-                <Card.Text>{appoinment.aptDate}</Card.Text>
-                <Card.Title>Notes:: </Card.Title>
-                <Card.Text>{appoinment.aptNotes}</Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </ListGroup.Item>
+        {appointmentList.map((appointment) => (
+          <AppointmentInfo key={appointment.id} appointment={appointment} />
         ))}
       </ListGroup>
     </div>
